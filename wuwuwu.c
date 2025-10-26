@@ -53,7 +53,7 @@ void smove(int a[4][4])
                     a[i + 1][j] = a[i][j];
                     a[i][j] = 0;
                 }
-    for (i = 1; i < 4; i++)
+    for (i = 0; i < 3; i++)
         for (j = 0; j < 4; j++)
             if (a[i + 1][j] == a[i][j]) // 合并
             {
@@ -61,7 +61,7 @@ void smove(int a[4][4])
                 a[i][j] = 0;
             }
     for (h = 0; h < 3; h++) // 移动
-        for (i = 1; i < 4; i++)
+        for (i = 0; i < 3; i++)
             for (j = 0; j < 4; j++)
                 if (a[i + 1][j] == 0)
                 {
@@ -80,16 +80,16 @@ void amove(int a[4][4])
                     a[i][j - 1] = a[i][j];
                     a[i][j] = 0;
                 }
-    for (i = 1; i < 4; i++)
-        for (j = 0; j < 4; j++)
+    for (i = 0; i < 4; i++)
+        for (j = 1; j < 4; j++)
             if (a[i][j - 1] == a[i][j]) // 合并
             {
                 a[i][j - 1] = 2 * a[i][j];
                 a[i][j] = 0;
             }
     for (h = 0; h < 3; h++) // 移动
-        for (i = 1; i < 4; i++)
-            for (j = 0; j < 4; j++)
+        for (i = 0; i < 4; i++)
+            for (j = 1; j < 4; j++)
                 if (a[i][j - 1] == 0)
                 {
                     a[i][j - 1] = a[i][j];
@@ -107,16 +107,16 @@ void dmove(int a[4][4])
                     a[i][j + 1] = a[i][j];
                     a[i][j] = 0;
                 }
-    for (i = 1; i < 4; i++)
-        for (j = 0; j < 4; j++)
+    for (i = 0; i < 4; i++)
+        for (j = 0; j < 3; j++)
             if (a[i][j + 1] == a[i][j]) // 合并
             {
                 a[i][j + 1] = 2 * a[i][j];
                 a[i][j] = 0;
             }
     for (h = 0; h < 3; h++) // 移动
-        for (i = 1; i < 4; i++)
-            for (j = 0; j < 4; j++)
+        for (i = 0; i < 4; i++)
+            for (j = 0; j < 3; j++)
                 if (a[i][j + 1] == 0)
                 {
                     a[i][j + 1] = a[i][j];
